@@ -1,0 +1,6 @@
+---
+name: shopfront-extensions
+---
+SilverShop\Page\Product:
+  extensions:
+    - SilverShop\ShopFront\Extension\ProductSection

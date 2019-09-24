@@ -1,0 +1,51 @@
+{
+    "name": "silvershop/shopfront",
+    "description": "Provides a 'shopfront' page type that can be used to display products or product categories.",
+    "license": "BSD-2-Clause",
+    "type": "silverstripe-vendormodule",
+    "homepage": "http://silvershop.github.io/",
+    "minimum-stability": "dev",
+
+    "support": {
+        "source": "https://github.com/silvershop/silvershop-shopfront",
+        "issues": "https://github.com/silvershop/silvershop-shopfront/issues"
+    },
+
+    "require": {
+        "silvershop/core": "^3",
+        "unclecheese/display-logic": "^2",
+        "symbiote/silverstripe-gridfieldextensions": "^3"
+    },
+
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "SilverShop\\ShopFront\\": "src/"
+        }
+    },
+
+    "keywords": [
+        "silverstripe",
+        "shop",
+        "shopfront"
+    ],
+
+    "authors": [
+        {
+            "name": "madmatt",
+            "homepage": "https://github.com/madmatt"
+        },
+
+        {
+            "name": "SilverShop Contributors",
+            "homepage": "https://github.com/silvershop/silvershop-shopfront/graphs/contributors"
+        }
+    ],
+
+    "scripts": {
+        "lint": "vendor/bin/phpcs src/"
+    }
+}
