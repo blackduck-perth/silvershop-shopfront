@@ -5,6 +5,7 @@ namespace SilverShop\ShopFront\Model;
 use Page;
 use SilverShop\Page\ProductCategory;
 use SilverShop\ShopFront\Page\ShopFrontPage;
+use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\GridField\GridField;
@@ -15,6 +16,7 @@ use SilverStripe\Forms\TextField;
 use SilverStripe\Forms\TreeDropdownField;
 use SilverStripe\ORM\DataList;
 use SilverStripe\ORM\DataObject;
+use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 use UncleCheese\DisplayLogic\Forms\Wrapper;
 
 class ShopFrontSection extends DataObject
@@ -39,7 +41,7 @@ class ShopFrontSection extends DataObject
 
     private static $many_many_extraFields = [
         'Products' => [
-            'Sort' => 'Int'
+            'SectionSort' => 'Int'
         ]
     ];
 
@@ -54,14 +56,14 @@ class ShopFrontSection extends DataObject
 
     public function getCMSFields()
     {
-        $gridField = Wrapper::create(
-            new GridField(
-                'Products',
-                'Products (if no category is set)',
-                $this->Products(),
-                GridFieldConfig_RelationEditor::create()
-            )
+        $gridField = new GridField(
+            'Products',
+            'Products (if no category is set)',
+            $this->Products(),
+            GridFieldConfig_RelationEditor::create()
         );
+
+        $gridField->getConfig()->addComponent(new GridFieldOrderableRows('SectionSort'));
 
         $fields = new FieldList([
             new TextField('Title'),
@@ -78,7 +80,7 @@ class ShopFrontSection extends DataObject
 
             $productCategoryField->setTreeBaseID($this->ShopFront()->ID)->setTitle('DisplayLogicWrap');
             $fields->push(Wrapper::create($productCategoryField));
-            $fields->push($gridField);
+            $fields->push(Wrapper::create($gridField));
         } else {
             $helperField = LiteralField::create(
                 'ProductSelectionHelper',
