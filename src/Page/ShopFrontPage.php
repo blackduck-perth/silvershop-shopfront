@@ -30,6 +30,10 @@ class ShopFrontPage extends Page
 
     private static $cascade_deletes = ['Sections'];
 
+    private static $singular_name = 'Shop Front Page';
+
+    private static $plural_name = 'Shop Front Pages';
+
     public function getCMSFields()
     {
         $fields = parent::getCMSFields();
