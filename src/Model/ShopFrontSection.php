@@ -30,6 +30,10 @@ class ShopFrontSection extends DataObject
         'Sort' => 'Int',
     ];
 
+    private static $singular_name = 'Shop Front Section';
+
+    private static $plural_name = 'Shop Front Sections';
+
     private static $has_one = [
         'ShopFront' => ShopFrontPage::class, // Parent relationship - indicates which shopfront page this section is on
         'ProductCategory' => ProductCategory::class,
