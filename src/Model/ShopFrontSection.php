@@ -45,7 +45,7 @@ class ShopFrontSection extends DataObject
 
     private static $many_many_extraFields = [
         'Products' => [
-            'SectionSort' => 'Int'
+            'Sort' => 'Int'
         ]
     ];
 
@@ -67,7 +67,7 @@ class ShopFrontSection extends DataObject
             GridFieldConfig_RelationEditor::create()
         );
 
-        $gridField->getConfig()->addComponent(new GridFieldOrderableRows('SectionSort'));
+        $gridField->getConfig()->addComponent(new GridFieldOrderableRows('Sort'));
 
         $fields = new FieldList([
             new TextField('Title'),
