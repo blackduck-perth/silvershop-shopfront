@@ -82,7 +82,7 @@ class ShopFrontSection extends DataObject
                 ProductCategory::class
             );
 
-            $productCategoryField->setTreeBaseID($this->ShopFront()->ID)->setTitle('DisplayLogicWrap');
+            $productCategoryField->setTreeBaseID($this->ShopFront()->ID)->setTitle('Shop Category');
             $fields->push(Wrapper::create($productCategoryField));
             $fields->push(Wrapper::create($gridField));
         } else {
