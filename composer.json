@@ -14,7 +14,7 @@
     "require": {
         "silvershop/core": "^4",
         "unclecheese/display-logic": "^3",
-        "symbiote/silverstripe-gridfieldextensions": "^3"
+        "symbiote/silverstripe-gridfieldextensions": "^4"
     },
 
     "require-dev": {
