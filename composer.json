@@ -26,7 +26,13 @@
             "SilverShop\\ShopFront\\": "src/"
         }
     },
-
+    
+    "extra": {
+        "branch-alias": {
+            "dev-master": "4.0.x-dev"
+        }
+    },
+    
     "keywords": [
         "silverstripe",
         "shop",
